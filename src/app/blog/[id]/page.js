@@ -1,11 +1,16 @@
 import React from 'react';
 
-const Page = () => {
+
+const PostPage = async () => {
+
+    const blog =  getData()
+
     return (
         <div>
-            BLOG POST
+            <img src={blog.imgurl} alt="" />
+            <div>{blog.body}</div>
         </div>
     );
 }
 
-export default Page;
+export default PostPage;

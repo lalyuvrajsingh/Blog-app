@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 
 const Navbar = () => {
 
@@ -11,39 +12,34 @@ const Navbar = () => {
         },
         {
             id: 2,
-            title: "Portfolio",
-            url: "/portfolio"
-        },
-        {
-            id: 3,
             title: "Blog",
             url: "/blog"
         },
         {
-            id: 4,
+            id: 3,
             title: "About",
             url: "/about"
         },
         {
-            id: 5,
+            id: 4,
             title: "Contact",
             url: "/contact"
         },
-        {
-            id: 6,
-            title: "Dashboard",
-            url: "/dashboard"
-        }
+        
     ]
 
     return (
-        <div className='flex justify-center p-4 align-middle backdrop-blur-30 border shadow-lg'>
-            <div className="p-4">
-                <Link href='/'><h1> Lal Yuvraj Singh</h1></Link>
+        <div className='navbar shadow-md'>
+            <div className="p-4 mr-auto">
+                <Link href='/' className=' text-2xl font-extrabold font-mono'><h1>Nikhil Jois</h1></Link>
             </div>
+            <div className="flex justify-center align-middle">
+            
             {links.map(link => (
-                <Link className='p-4 ' key={link.id} href={link.url} >{link.title}</Link>
+                <Link className='p-4' key={link.id} href={link.url} >{link.title}</Link>
             ))}
+            <DarkModeToggle/>
+            </div>
         </div>
     );
 }

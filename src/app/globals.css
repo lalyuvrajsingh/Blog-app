@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark{
+    background-color: black;
+    color: white;
+}
+
+.light{
+    background-color: white;
+    color: black;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.159);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 170px;
+    height: min-content;
+    right: 0;
+    z-index: 999;
+    width: 70%;
+    margin: 10px;
+    border-radius: 50px;
+    }
+
+        @keyframes fadeIn {
+            from {
+            opacity: 0;
+            }
+            to {
+            opacity: 1;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+
+            @keyframes scrollIn {
+                from {
+                opacity: 0;
+                transform: translateY(20px);
+                }
+                to {
+                opacity: 1;
+                transform: translateY(0);
+                }
+            }
+            
+            .slide-in {
+                animation: scrollIn 1s ease-in-out;
+            }
