@@ -7,10 +7,14 @@ const NewsLetter = () => {
     return (
         <div>
                 
-                    <div className="max-w-6xl flex h-[600px] mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-6xl flex  h-[600px] mx-auto px-4 sm:px-6 lg:px-8">
                     <div className='m-5 flex flex-col justify-center mr-auto'>
                         <h2 className="text-5xl font-bold mb-10">Subscribe to Nikhil's Newsletter</h2>
                         <br />
+                        <Spline 
+                    scene="https://prod.spline.design/8UN2PV3CWxYPct4G/scene.splinecode"
+                    className='md:hidden flex h-[200px]'
+                    />
                         <p className='mb-10 text-gray-500'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, voluptas?</p>
                         <form className="flex justify-center max-w-sm ">
                         <input
@@ -31,7 +35,10 @@ const NewsLetter = () => {
                     </div>
 
                         
-                    <Spline scene="https://prod.spline.design/8UN2PV3CWxYPct4G/scene.splinecode"/>
+                    <Spline 
+                    scene="https://prod.spline.design/8UN2PV3CWxYPct4G/scene.splinecode"
+                    className='hidden md:flex w-3/4'
+                    />
                         
 
                     </div>

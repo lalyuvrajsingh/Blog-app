@@ -16,22 +16,17 @@
         onClick={toggle}
         >
         {mode === "light" ? (
-            <div>
-            <div className='border rounded-2xl flex justify-center align-middle'>
+            
                 
-                <div className='bg-blue-500 rounded-full w-[18px]  ease-in-out h-[18px] m-1 ml-2'></div>
-                <div className='m-1 mr-2 w-[18px] h-[18px] rounded-full '>☀️</div>
+                
+                <div className='text-2xl mr-5 flex items-center rounded-full '>☀️</div>
 
-            </div>
-            </div>
+            
         
         ) : (
-            <div>
-            <div className='border rounded-2xl flex  '>
-                <div className='m-1 mr-2 w-[18px] h-[18px] rounded-full'>🌙</div>
-                <div className='bg-blue-500 rounded-full w-[18px] h-[18px] m-1 ml-2'></div>
-            </div>
-            </div>
+            
+                <div className=' text-2xl mr-5 flex items-center rounded-full'>🌙</div>
+                
         )}
         </button>
     );

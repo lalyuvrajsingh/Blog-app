@@ -1,5 +1,14 @@
+
 import React from 'react';
 import Contact from '@/components/Contact form/Contact';
+
+
+
+
+export const metadata = {
+    title: "Nikhil Jois contact information",
+    description: "This is thecontact information of nikhil jois" 
+    }
 
 const ContactPage = () => {
     return (
@@ -7,7 +16,9 @@ const ContactPage = () => {
                 <div className='mt-[100px]'>
                 <Contact/>
                 </div>
+
             </div>
+
     );
 }
 

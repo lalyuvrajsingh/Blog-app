@@ -1,10 +1,17 @@
+"use client"
 import React from 'react';
+import Spline from '@splinetool/react-spline';
+
 
 const Contact = () => {
     return (
-            <div className="max-w-6xl p-5 m-5 h-[600px] mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-5xl font-bold m-5 mb-10">Contact Us</h2>
-            <form className='flex flex-col justify-center align-middle p-5'>
+    
+        
+            <div className="fade-in max-w-6xl p-5 m-5 h-[600px]  mx-auto px-4 sm:px-6 lg:px-8">
+
+                <h2 className="slide-in text-5xl font-bold m-5 mb-10">Get in touch!</h2>
+            
+            <form className='flex flex-col  justify-center align-middle p-5'>
             
                 <input
                 type="text"
@@ -21,7 +28,6 @@ const Contact = () => {
                 placeholder="Enter your email address"
                 required
                 />
-
             
                 <textarea
                 id="message"
@@ -39,7 +45,10 @@ const Contact = () => {
                 Send Message
             </button>
             </form>
+
+
         </div>
+        
     );
 }
 

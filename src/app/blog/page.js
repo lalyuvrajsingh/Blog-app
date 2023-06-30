@@ -1,6 +1,8 @@
+
 import BlogPost from '@/components/BlogPost/BlogPost';
 import Link from 'next/link';
 import React from 'react';
+
 
 
 async function getData() {
@@ -12,24 +14,26 @@ async function getData() {
     // Recommendation: handle errors
     if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    return Error()
     }
 
     return res.json()
 }
 
-const Page = async () => {
+const Blog = async () => {
 
     const Data = await getData()
 
     return (
-        <div className='grid grid-cols-3 gap-4'>
+        <div className='md:grid grid-cols-3 gap-4 sm:flex flex-col'>
                             {Data.map(item => (
-                    <Link href={`blog/${item.id}`} >
-                    <BlogPost className='p-4' 
-                    key={item.id}
-                    imgurl='https://cdn.discordapp.com/attachments/1116923562977148959/1117014878599774328/lalyuvrajsingh24_make_product_shoot_image_of_a_plant_plant_is_a_3305a3bf-8063-4098-a171-baedfe246e67.png'
+                    <Link href={`/blog/${item._id}`} >
+                    <BlogPost
+                    key={item._id}
+                    image={item.image}
                     title={item.title}
+                    desc={item.desc}
+                    content={item.content}
                     />
                     </Link>
                 ))}
@@ -37,4 +41,4 @@ const Page = async () => {
     );
 }
 
-export default Page;
+export default Blog;

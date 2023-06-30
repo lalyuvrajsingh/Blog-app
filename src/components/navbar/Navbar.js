@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
+import MobileMenu from '../MobileMenu/MobileMenu';
 
 const Navbar = () => {
 
@@ -28,18 +29,24 @@ const Navbar = () => {
         
     ]
 
+
     return (
-        <div className='navbar shadow-md'>
+        <div className='navbar shadow-md  flex items-center'>
             <div className="p-4 mr-auto">
                 <Link href='/' className=' text-2xl font-extrabold font-mono'><h1>Nikhil Jois</h1></Link>
             </div>
-            <div className="flex justify-center align-middle">
+            <div className="hidden md:flex justify-center align-middle">
             
             {links.map(link => (
                 <Link className='p-4' key={link.id} href={link.url} >{link.title}</Link>
             ))}
             <DarkModeToggle/>
+            
             </div>
+            
+            <MobileMenu links={links} />
+            
+            
         </div>
     );
 }
