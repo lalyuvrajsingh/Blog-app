@@ -2,27 +2,32 @@
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import CancelIcon from '@mui/icons-material/Cancel';
 
-function handleMenuToggle() {
-    setIsOpen(!isOpen);
-}
 
-function MobileMenu({links}) {
+function MobileMenu({links}){
     const [isOpen, setIsOpen] = useState(false)
 
-    
-        return (
-        <div className='md:hidden flex'>
+    function handleMenuToggle() {
+    setIsOpen(!isOpen);
+    }
 
-            <MenuIcon onClick={!isOpen}/>
-        
-            {!isOpen && (
-            <div className='md:hidden flex flex-col p-2'>
+        return (
+        <div className='md:hidden flex '>
+
+            <MenuIcon onClick={handleMenuToggle} className='mr-5'/>
+
+            {isOpen ? (
+            <div className='md:hidden flex flex-col absolute right-0 mt-2 w-48 glass blur-2xl bg-white rounded-md shadow-lg'>
+
+            <Link href='/' className=' text-2xl font-extrabold mt-10 font-mono'><h1>Nikhil Jois</h1></Link>
+            <CancelIcon  onClick={handleMenuToggle} />
             {links.map(link => (
                 <Link className='p-4' key={link.id} href={link.url}>{link.title}</Link>
             ))}
             </div>
-            )}
+            ): ''}
+
         </div>
         );
     }

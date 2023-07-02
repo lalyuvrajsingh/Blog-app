@@ -33,7 +33,7 @@ const Navbar = () => {
     return (
         <div className='navbar shadow-md  flex items-center'>
             <div className="p-4 mr-auto">
-                <Link href='/' className=' text-2xl font-extrabold font-mono'><h1>Nikhil Jois</h1></Link>
+                <Link href='/' className='text-2xl font-extrabold font-mono'><h1>Nikhil Jois</h1></Link>
             </div>
             <div className="hidden md:flex justify-center align-middle">
             
