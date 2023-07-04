@@ -26,12 +26,19 @@ export const POST = async (request) => {
 
         const body = await request.json()
         const newPost = new Post(body)
+        const { inputValue } = req.body
+
+        const {db} = await connect() //connect to DB
 
     try{
 
-        await connect()
+        
 
         await newPost.save()
+
+        const collection = db.collection('post');
+
+        await collection.insertOne({ input: inputValue });
 
         return new NextResponse( "post has been created", { status: 201 })
 
