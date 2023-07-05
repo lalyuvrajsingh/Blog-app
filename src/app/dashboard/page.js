@@ -13,7 +13,8 @@ import BlogPost from '@/components/BlogPost/BlogPost';
 
 const Dashboard = (Data) => {
 
-    
+    const CLOUD_NAME = 'dltxllhzt'
+    const UPLAOD_PRESET = 'Nikhil_blog'
 
     /**const [data, setData] = useState([])
     const [err, setErr] = useState([])
@@ -77,14 +78,32 @@ const Dashboard = (Data) => {
             e.preventDefault();
             // Perform actions to publish the blog and store it in MongoDB
             console.log('Title:', title);
-    console.log('Description:', desc);
-    //console.log('Image:', newImg);
-    console.log('Content:', content);
+            console.log('Description:', desc);
+            //console.log('Image:', newImg);
+            console.log('Content:', content);
             // Use the captured input values: title, description, url, content
-            setTitle('');
-    setDesc('');
-    setUrl('');
-    setContent('');
+
+        const uploadImage = async () =>{
+            if(!photo) return
+
+            const formData = new FormData()
+
+            formData.append("file", photo)
+            formData.append("uplaod_preset", UPLAOD_PRESET)
+
+            try{
+                const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+                    method: 'POST',
+                    body: formData
+                })
+                const data = await res.json()
+
+                const imgUrl = data['secure_url']
+                return imgUrl
+            }catch(err){
+                console.log(err)
+            }
+        }
 
 
             try{
@@ -95,9 +114,12 @@ const Dashboard = (Data) => {
                     desc,
                     image,
                     content,
+                    username: session?.posts?._id
                     
                 })
             })
+            const blog = res.json
+            router.push(`/blog/${blog?._id}`)
             mutate()
         } catch(err){
             console.log(err)
